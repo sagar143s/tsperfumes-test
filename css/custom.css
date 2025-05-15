@@ -279,7 +279,7 @@ body{
 }
 
 .btn-default.border-btn::before{
-	color: var(--accent-color);
+	color: var(--accent-color);   
 }
 
 .btn-default.border-btn:hover,
