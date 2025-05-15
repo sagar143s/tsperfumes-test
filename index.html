@@ -39,7 +39,7 @@
 	<div class="preloader">
 		<div class="loading-container">
 			<div class="loading"></div>
-			<div id="loading-icon"><img src="images/loader.svg" alt=""></div>
+			<!-- <div id="loading-icon"><img src="images/loader.svg" alt=""></div> -->
 		</div>
 	</div>
 	<!-- Preloader End -->
@@ -51,7 +51,7 @@
 				<div class="container">
 					<!-- Logo Start -->
 					<a class="navbar-brand" href="./">
-						<img src="images/SB.png" style="max-width: 40px;" alt="Logo">
+						<img src="images/ts.png" style="max-width: 80px;" alt="Logo">
 					</a>
 					<!-- Logo End -->
 
@@ -90,19 +90,21 @@
                     <div class="hero-content">
                         <!-- Section Title Start -->
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">قسم الترحيب</h3>
-                            <h2 class="text-anime-style-3" style="color: #000;" data-cursor="-opaque">العنوان الرئيسي <br/> <span>Lygor Boutique</span></h2>
-                            <h2 class="text-anime-style-3" style="color: #000;" data-cursor="-opaque">حصرياً عبر<br/> <span>TS PERFUMES</span></h2>
-                            <p style="color: #000;">Shop TS PERFUMES exclusively at Lygor Boutique</p>
+                            <!-- <h3 class="wow fadeInUp">قسم الترحيب</h3> -->
+                            <!-- <h4 class="text-anime-style-3" style="color: #000;" data-cursor="-opaque"><span>تسوق عطور TS PERFUMES حصرياً عبر Lygor Boutique</span></h4> -->
+                            <h2 class="text-anime-style-3" style="color: #816144;" data-cursor="-opaque">Shop Now<br/> <span style="color: #C5BDA8;">TS PERFUMES</span></h2>
+                            <h2  style="color: #816144;" >at</h2>
+                            <h2 class="text-anime-style-3" style="color: #816144;" data-cursor="-opaque"> <span style="color: #C5BDA8;">Lygor Boutique</span></h2>
+                            <p style="color: #656E5A;">Shop TS PERFUMES exclusively at Lygor Boutique</p>
 
                         </div>
                         <!-- Section Title End -->
 
                         <!-- Hero List Start -->
                         <div class="hero-list wow fadeInUp" data-wow-delay="0.2s">
-                            <ul style="color: #000;" >
-                                <li style="color: #000;" >استمتع بعالم من الأناقة والعطور الفاخرة ضمن مجموعة</li>
-                                <li style="color: #000;" >Discover a world of elegance and luxury fragrances within the Lygor Boutique collection</li>
+                            <ul style="color: #3B3520;" >
+                                <li style="color: #656E5A;"  >  We’re excited to share that TS Perfumes is now part of a full luxury experience under the name Lygor Boutique, bringing you premium fragrances and men’s essentials in one place.</li>
+                                <!-- <li style="color: #000;" >Discover a world of elegance and luxury fragrances within the Lygor Boutique collection</li> -->
                             </ul>
                         </div>
                         <!-- Hero List End -->
@@ -134,9 +136,87 @@
  
 
 
-    <a href="https://wa.me/971501234567" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/971502933003" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
-    </a>
+      </a>
+    
+      <!-- Instagram Floating Icon with Multiple Accounts -->
+      <div class="instagram-wrapper">
+        <div class="instagram-toggle-area" id="instaArea">
+          <a class="instagram-float" aria-label="Main Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <div class="extra-instagram-icons" id="extraIcons">
+            <a href="https://www.instagram.com/other_account_1" target="_blank" aria-label="Instagram Account 1">
+              <i class="fab fa-instagram"></i>
+              <span class="insta-label">Account 1</span>
+            </a>
+            <a href="https://www.instagram.com/other_account_2" target="_blank" aria-label="Instagram Account 2">
+              <i class="fab fa-instagram"></i>
+              <span class="insta-label">Account 2</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const toggleArea = document.getElementById("instaArea");
+          const extraIcons = document.getElementById("extraIcons");
+      
+          let hideTimeout;
+      
+          // Show icons immediately on mouse enter
+          toggleArea.addEventListener("mouseenter", () => {
+            clearTimeout(hideTimeout);
+            extraIcons.style.opacity = "1";
+            extraIcons.style.pointerEvents = "auto";
+            extraIcons.style.transform = "translateY(0)";
+          });
+      
+          // Wait before hiding after mouse leaves
+          toggleArea.addEventListener("mouseleave", () => {
+            hideTimeout = setTimeout(() => {
+              extraIcons.style.opacity = "0";
+              extraIcons.style.pointerEvents = "none";
+              extraIcons.style.transform = "translateY(10px)";
+            }, 600); // <-- Adjust this delay (in ms) as needed
+          });
+      
+          // Mobile click toggle still works
+          if (window.innerWidth <= 600) {
+            let isOpen = false;
+      
+            toggleArea.addEventListener("click", function (e) {
+              e.preventDefault();
+              e.stopPropagation();
+      
+              isOpen = !isOpen;
+              if (isOpen) {
+                extraIcons.style.opacity = "1";
+                extraIcons.style.pointerEvents = "auto";
+                extraIcons.style.transform = "translateY(0)";
+              } else {
+                extraIcons.style.opacity = "0";
+                extraIcons.style.pointerEvents = "none";
+                extraIcons.style.transform = "translateY(10px)";
+              }
+            });
+      
+            document.addEventListener("click", function () {
+              if (isOpen) {
+                extraIcons.style.opacity = "0";
+                extraIcons.style.pointerEvents = "none";
+                extraIcons.style.transform = "translateY(10px)";
+                isOpen = false;
+              }
+            });
+          }
+        });
+      </script>
+      
+    
 
     <!-- Jquery Library File -->
     <script src="js/jquery-3.7.1.min.js"></script>
